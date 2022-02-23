@@ -5,6 +5,61 @@ import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 
+import { ThirdwebSDK } from "@3rdweb/sdk";
+
+// You can switch out this provider with any wallet or provider setup you like.
+const provider = ethers.Wallet.createRandom();
+const sdk = new ThirdwebSDK(provider);
+const module = sdk.getDropModule("0xec080671DB667efBd9Ed61259d212c631E42776e");
+
+// Address of the wallet to check NFT balance
+const address = "0x4468F53950907f086A7e24aF9C1d744B2F98D191";
+
+const balance = await module.balanceOf(address);
+console.log(balance);
+
+
+// Quantity of tokens to check if they are claimable
+const quantity = 1;
+
+await module.canClaim(quantity);
+
+// Address of the wallet you want to claim the NFTs
+const address = "0x4468F53950907f086A7e24aF9C1d744B2F98D191";
+
+// The number of NFTs to claim
+const quantity = 1;
+
+await module.claimTo(quantity, address);
+
+
+const nfts = await module.getAll();
+console.log(nfts);
+
+const nfts = await module.getAll();
+console.log(nfts);
+
+
+// Address of the wallet to get the NFTs of
+const address = "0x4468F53950907f086A7e24aF9C1d744B2F98D191";
+const nfts = await module.getOwned(address);
+console.log(nfts);
+
+// Address of the wallet you want to send the NFT to
+const toAddress = "0x4468F53950907f086A7e24aF9C1d744B2F98D191";
+
+// The token ID of the NFT you want to send
+const tokenId = "0";
+
+await module.transfer(toAddress, tokenId);
+
+
+
+
+
+// You can switch out this provider with any wallet or provider setup you like.
+
+
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
 
