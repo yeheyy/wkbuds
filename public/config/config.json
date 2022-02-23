@@ -1,0 +1,18 @@
+{
+  "CONTRACT_ADDRESS": "0xec1692A48B9c5b0552F98550994221Cb1ca213E5",
+  "SCAN_LINK": "https://mumbai.polygonscan.com/address/0xec1692a48b9c5b0552f98550994221cb1ca213e5",
+  "NETWORK": {
+    "NAME": "Mumbai Testnet",
+    "SYMBOL": "Matic",
+    "ID": 80001
+  },
+  "NFT_NAME": "wakbuds",
+  "SYMBOL": "wks",
+  "MAX_SUPPLY": 2555,
+  "WEI_COST": 4000000000000000000,
+  "DISPLAY_COST": 4,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "Opeansea",
+  "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/wakbuds",
+  "SHOW_BACKGROUND": true
+}
